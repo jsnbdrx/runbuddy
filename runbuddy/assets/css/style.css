@@ -18,6 +18,13 @@ header {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-image: url("../images/hero-bg.jpg");
+  background-size: cover;
+  background-position: 80%;
+  background-attachment: fixed;
 }
 
 header h1 {
@@ -25,6 +32,7 @@ header h1 {
   margin: 0;
   font-size: 36px;
   color: #fce138;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 header a {
@@ -42,12 +50,20 @@ header nav ul {
   justify-content: space-between;
   align-items: center;
   list-style: none;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 header nav ul li a {
   padding: 10px 15px;
   font-weight: lighter;
   font-size: 1.55vw;
+}
+
+header nav ul li a:hover {
+background: #fce138;
+color: #024e76;
+border-radius: 15px;
+text-shadow: none;
 }
 
 /* HEADER / NAVBAR STYLES END */
@@ -109,6 +125,7 @@ section {
   font-style: italic;
   font-size: 55px;
   color: #fce138;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero-form {
@@ -118,6 +135,11 @@ section {
   color: #024e76;
   width: 40%;
   margin: 3.5%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+}
+.hero-form button:hover {
+  background-color: #39a6b2;  
 }
 
 .hero-form h3 {
@@ -135,7 +157,13 @@ section {
   font-size: 16px;
   color: #024e76;
   width: 100%;
-  margin-bottom: 15px; 
+  margin-bottom: 15px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+.form-input:focus {
+  background-color: rgba(255,255,255, 1);
+  outline: none;
 }
 
 .hero-form label {
@@ -148,6 +176,7 @@ section {
   border: none;
   padding: 10px 20px;
   font-size: 16px;
+  border-radius: 10px;
 } 
 /* HERO STYLES END */
 
@@ -199,6 +228,7 @@ section {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid #39a6b2;
 }
 
 .step h3 {
@@ -236,6 +266,10 @@ section {
   font-size: 26px;
   line-height: 1.5;
   color: #024e76;
+}
+
+.step:last-child {
+  border-bottom: none;
 }
 
 /* WHAT YOU DO STYLES END */
@@ -329,8 +363,12 @@ section {
   width: 100%;
   margin-bottom: 15px;
   margin-top: 5px;
+  border-radius: 10px;
 }
 
+.contact-form input:focus, .contact-form textarea:focus {
+
+}
 .contact-form button {
   width: 100%;
   border: none;
@@ -339,6 +377,11 @@ section {
   text-align: center;
   padding: 15px 0;
   font-size: 16px;
+  border-radius: 10px;
+}
+.contact-form button:hover {
+  color: #fce138;
+  background: #39a6b2;
 }
 
 .contact-info a {
@@ -361,6 +404,7 @@ section {
   display: flex;
 }
 
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
   header {
     padding-bottom: 0;
@@ -394,7 +438,7 @@ section {
   .hero-cta {
     text-align: center;
   }
-  
+
   .section-title {
     width: 80%;
   }
@@ -407,8 +451,9 @@ section {
     flex: 1 100%;
   }
 }
-@media screen and (max-width: 768px) {
 
+/* MEDIA QUERY FOR TABLETS AND SMALLER */
+@media screen and (max-width: 768px) {
   section {
     padding: 30px 15px;
   }
@@ -434,11 +479,10 @@ section {
   .step-text {
     flex: 100%;  
   }
-
 }
 
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
 @media screen and (max-width: 575px) {
-
   .hero-form button {
     width: 100%;
   }
